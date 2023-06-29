@@ -1,6 +1,6 @@
 @@ -1,5 +0,0 @@
 ---
-layout: function
+layout: category
 category: BMI
 background: '/img/bg-index.jpg'
 ---
