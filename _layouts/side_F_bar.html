@@ -1,1 +1,51 @@
 
+---
+layout: default
+---
+
+<!-- Page Header -->
+
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+
+                <!-- Home Post List -->
+                {% for post in site.categories[page.category] %}
+
+                <article class="side_function">
+                    <a href="{{ function.url | prepend: site.baseurl | replace: '//', '/' }}">
+                        <h2 class="function-title">{{ function.title }}</h2>
+                        {% if function.subtitle %}
+                        <h3 class="function-subtitle">{{ function.subtitle }}</h3>
+                        {% else %}
+                        <h3 class="function-subtitle">{{ function.excerpt | strip_html | truncatewords: 15 }}</h3>
+                        {% endif %}
+                    </a>
+                    <p class="function-meta">Posted b
+                      
+                    </p>
+                </article>
+
+                <hr>
+
+                {% endfor %}
+
+                <!-- Pager -->
+                <div class="clearfix">
+                    <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-2">
+                <ul class="side_function">
+                    {% for side_function in site.side_function %}
+                    <li><a href="/blog-demo/side_function/{{ category | first }}" {% if side_function[0] == page.category %}class="active"{% endif %}>{{ category | first }} ({{ category | last | size }})</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </div>
