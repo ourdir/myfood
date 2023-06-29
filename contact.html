@@ -3,7 +3,7 @@ layout: post
 title: "BMI 측정"
 subtitle: "신체 정보를 입력하시면 BMI와 맞는 식단이?!"
 background: '/img/posts/03_1.jpg'
-categories: ['programming', 'go']
+categories: ['bmi']
 ---
 
 <!DOCTYPE html>
@@ -272,6 +272,15 @@ categories: ['programming', 'go']
                 var resultContainer = document.getElementById("resultContainer");
                 var resultBox = document.querySelector(".result-box");
                 resultContainer.classList.remove("hidden");
+                localStorage.setItem('bmi', 30);
+                localStorage.getItem('bmi'); // '30' (문자열)
+                localStorage.removeItem('bmi'); // null
+                localStorage.null
+
+                // 객체를 저장할 때
+                localStorage.setItem('object', JSON.stringfy({a : 'b'}));
+                JSON.parse(localStorage.getItem('object')); // {a : 'b'}
+ 
                 resultBox.classList.remove("hidden");
             }
             function resetForm() {
