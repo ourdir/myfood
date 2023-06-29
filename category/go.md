@@ -1,5 +1,5 @@
 ---
-layout: category
-category: go
+layout: function
+category: BMI
 background: '/img/bg-index.jpg'
 ---
