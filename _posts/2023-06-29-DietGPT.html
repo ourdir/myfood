@@ -62,6 +62,9 @@ categories: ['purpose', 'gpt']
 
         function chatGPT() {
             const api_key = prompt("API 키를 입력하세요");
+            if (api_key === null || !api_key.startsWith("sk-")) {
+                return;
+            }
             const keywords = document.getElementById('keywords').value;
             $('#loading').show();
 
